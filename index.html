@@ -7,11 +7,13 @@
 
       const html = document.documentElement.outerHTML;
 
-      history.replaceState('', '', location.pathname);
+      history.replaceState('', '', '/1');
 
       document.open('text/plain');
       document.write('view source disabled');
       document.close();
+      
+      history.replaceState('', '', '/2');
 
       document.documentElement.innerHTML = html;
     });
