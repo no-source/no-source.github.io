@@ -13,7 +13,7 @@
 
       document.documentElement.innerHTML = html;
 
-      history.replaceState(null, null, String(document.URL));
+      history.replaceState(null, null, document.URL + '?');
     });
   </script>
 
