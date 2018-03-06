@@ -7,13 +7,13 @@
 
       const html = document.documentElement.outerHTML;
 
+      history.replaceState('', '', '');
+
       document.open('text/plain');
       document.write('view source disabled');
       document.close();
 
       document.documentElement.innerHTML = html;
-
-      history.replaceState(null, null, document.URL + '?');
     });
   </script>
 
@@ -44,8 +44,8 @@
 
     <p>
       No peeking at the code! We've disabled "view source" to help you
-      resist the temptation! (Editors note: this only works in Firefox.
-      Play along.)
+      resist the temptation! (Editors note: this only works in Firefox
+      and Edge, not Chrome. Play along.)
     </p>
 
     <h2>
