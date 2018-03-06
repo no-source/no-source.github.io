@@ -7,11 +7,11 @@
 
       const html = document.documentElement.outerHTML;
 
-      history.replaceState('', '', '/?' + Date.now());
-
       document.open('text/plain');
       document.write('view source disabled');
       document.close();
+
+      history.replaceState('', '', '/?t=' + Date.now());
 
       document.documentElement.innerHTML = html;
     });
