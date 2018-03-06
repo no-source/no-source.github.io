@@ -7,7 +7,7 @@
 
       const html = document.documentElement.outerHTML;
 
-      history.replaceState('', '', '');
+      history.replaceState('', '', location.pathname);
 
       document.open('text/plain');
       document.write('view source disabled');
