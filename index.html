@@ -12,11 +12,6 @@
       document.close();
 
       document.documentElement.innerHTML = html;
-
-      // hiding source breaks normal reload, so let's add a hacky reload.
-      document.addEventListener('beforeonload', function(event) {
-        location.reload();
-      });
     });
   </script>
 
