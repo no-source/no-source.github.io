@@ -14,7 +14,7 @@
       document.documentElement.innerHTML = html;
 
       // hiding source breaks normal reload, so let's add a hacky reload.
-      document.addEventListener(function(event) {
+      document.addEventListener('keypress', function(event) {
         if (event.key == 'r' && (event.ctrlKey || event.metaKey)) {
           location.search = 't=' + Date.now();
           return false;
