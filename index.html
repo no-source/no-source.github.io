@@ -14,12 +14,8 @@
       document.documentElement.innerHTML = html;
 
       // hiding source breaks normal reload, so let's add a hacky reload.
-      document.addEventListener('keydown', function(event) {
-        if (event.key == 'r' && (event.ctrlKey || event.metaKey)) {
-          event.preventDefault();
-          location.search = 't=' + Date.now();
-          location.reload();
-        }
+      document.addEventListener('beforeonload', function(event) {
+        location.reload();
       });
     });
   </script>
