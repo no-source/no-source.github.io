@@ -11,9 +11,15 @@
       document.write('view source disabled');
       document.close();
 
-      history.replaceState('', '', '/?t=' + Date.now());
-
       document.documentElement.innerHTML = html;
+
+      // hiding source breaks normal reload, so let's add a hacky reload.
+      document.addEventListener(function(event) {
+        if (event.key == 'r' && (event.ctrlKey || event.metaKey)) {
+          location.search = 't=' + Date.now();
+          return false;
+        }
+      });
     });
   </script>
 
